@@ -66,16 +66,16 @@ PORT=4000 npm start
 Place your output screenshots in the `screenshots/` directory matching the names below:
 
 ### 4.1 GET /
-![GET Root](screenshots/get-root.png)
+![GET /](screenshots/Home.png)
 
 ### 4.2 GET /about
-![GET About](screenshots/get-about.png)
+![GET /about](screenshots/About.png)
 
 ### 4.3 GET /time
-![GET Time](screenshots/get-time.png)
+![GET /time](screenshots/Time.png)
 
 ### 4.4 GET Unknown Route (404)
-![GET 404](screenshots/get-404.png)
+![404 Error](screenshots/Unknown.png)
 
 ---
 
