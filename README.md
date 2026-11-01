@@ -4,7 +4,7 @@
 - **Student Name:** Narala Sai Manuharsha
 - **Registration Number:** 252U1R8063
 - **Section:** CSE-QE-2B-204
-- **Faculty:** Joel Prashanth D
+- **Faculty:** Chintakrindi Sai Siva Teja
 - **Live link:** Not applicable
 
 ---
