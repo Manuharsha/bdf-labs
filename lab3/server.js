@@ -5,7 +5,8 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DB_PATH = path.join(__dirname, 'books.db');
+
+const DB_PATH = process.env.VERCEL ? ':memory:' : path.join(__dirname, 'books.db');
 
 let db = null;
 
@@ -253,6 +254,7 @@ app.use((req, res) => {
 });
 
 // Database initialization and server boot
+// Database initialization and server boot
 async function initializeDBAndServer() {
   try {
     db = await open({
@@ -281,9 +283,12 @@ async function initializeDBAndServer() {
       console.log(`Database seeded with ${initialBooks.length} initial books.`);
     }
 
-    app.listen(PORT, () => {
-      console.log(`Server is running at http://localhost:${PORT}`);
-    });
+    // Only start the local server if we are NOT on Vercel
+    if (!process.env.VERCEL) {
+      app.listen(PORT, () => {
+        console.log(`Server is running at http://localhost:${PORT}`);
+      });
+    }
   } catch (error) {
     console.error('Failed to initialize database or start server:', error.message);
     process.exit(1);
@@ -292,5 +297,5 @@ async function initializeDBAndServer() {
 
 initializeDBAndServer();
 
-module.exports = { app, initializeDBAndServer };
-
+// Export the Express app so Vercel can run it serverless
+module.exports = app;

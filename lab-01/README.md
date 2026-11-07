@@ -47,6 +47,9 @@ PORT=4000 npm start
   npm run start:http
   ```
   *(or `node server-http.js`)*
+  //things which are not so good can come and catch us soon, we have to be careful, with our thoughts
+  // come for prey, its more important
+  // things have
 
 ---
 
